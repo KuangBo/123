@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 把struts的请求委托给spring管理, 作用:创建Action实例的过程由spring处理,其他的还是有struts2自己处理 -->
+	<constant name="struts.objectFactory" value="spring" />
+
+	<include file="struts2/struts-admin-login.xml"></include>
+	<include file="struts2/struts-trade-manage.xml"></include>
+	<include file="struts2/struts-car-manage.xml"></include>
+	<include file="struts2/struts-customer-manage.xml"></include>
+	<package name="register" extends="struts-default" namespace="/Register_login">
+		<action name="Register_doo" class="cn.carrent.action.FontsAction">
+			<result name="success">/Register_login/Register_do.jsp</result>
+		</action>
+	</package>
+</struts>    
